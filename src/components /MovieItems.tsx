@@ -1,5 +1,4 @@
 import React from 'react'
-import { Movie } from './Form'
 
 interface MovieItemsProps {
     m: string
