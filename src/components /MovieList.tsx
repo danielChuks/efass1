@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import MovieItems from './MovieItems';
 import { useRecoilState } from 'recoil';
 import { movieListAtom } from '../state';
 
 
 function MovieList() {
-    const [movieList] = useRecoilState(movieListAtom)
+    const [movieList] = useRecoilState(movieListAtom);
 
   return (
     <div>
