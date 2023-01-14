@@ -21,6 +21,8 @@ function Form(){
     const handleSubmit = (event: any) => {
         event.preventDefault();
         setMovieList([...movieList, {movie, description}]);
+        setDescription("");
+        setMovie('')
     }
 
   return (

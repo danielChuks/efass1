@@ -8,8 +8,12 @@ interface MovieItemsProps {
 function MovieItems({m, d}: MovieItemsProps) {
   return (
     <div>
-        {m}
-        {d}
+      <div>
+          Name : {m}
+      </div>
+      <div>
+        Description : {d}
+      </div>
     </div>
   )
 }
