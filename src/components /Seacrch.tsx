@@ -10,39 +10,27 @@ function Search() {
 
 
 
-const handleSearch = (e: any) => {
-    const filterValue = values.find(
-        (value) => value.movie === searchTerm
+const handleSearch = () => {
+    const filterValue = values.find((value) => value.movie.trim() === searchTerm.trim());
+            if(filterValue) 
+                setFoundMovie(filterValue);
+}
 
-        );
-
-
-        if(filterValue) setFoundMovie(filterValue);
-        console.log("this is filtered", filterValue)
-
-        console.log("this is the values ", values);
-        console.log("This is search term", searchTerm);
-    }
-
- useEffect(() => {    
-    console.log("this is found Movies", foundMovie);
- }, [foundMovie]);
+ useEffect(() => {  
+      handleSearch();
+      return () => setFoundMovie(null)
+ }, [searchTerm]);
 
 
 
   return (
     <div>
-
         <input 
             placeholder='Search Movie'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
         />
         <div>
-
-            <div>
-                <button onClick={handleSearch}>search</button>
-            </div>
             {foundMovie ? foundMovie.movie : 'no movie found'}
         </div>
     </div>
