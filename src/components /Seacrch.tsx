@@ -18,6 +18,7 @@ const handleSearch = () => {
 
  useEffect(() => {  
       handleSearch();
+      return () => setFoundMovie(null)
  }, [searchTerm]);
 
 
