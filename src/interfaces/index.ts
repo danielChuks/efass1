@@ -1,1 +1,1 @@
-export * from "./interfaces";
+export * from "./movie.interface";
