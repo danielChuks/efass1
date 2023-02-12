@@ -1,2 +1,2 @@
 export * from "./movie.interface";
-//export * from "./toggle.interface";
+export * from "./toggle.interface";

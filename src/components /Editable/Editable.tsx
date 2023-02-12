@@ -4,15 +4,14 @@ import useToggle from '../../Hooks/useToggle';
 export default function Editable() {
     const [inputValue, setInputValue] = useState('');
 
-    const { status, toggleStatus} = useToggle()
+    const { status: editable, toggleStatus: changeEditable} = useToggle()
 
     const handleChange = (e: any) => setInputValue(e.target.value);
 
-    console.log(inputValue);
 
     return (
         <div>
-            {status ? (
+            {editable ? (
                 <label>
                     Title
                     <input onChange={handleChange} value={inputValue} />
@@ -21,7 +20,7 @@ export default function Editable() {
                 <>Title {inputValue}</>
             )}
             <br/>
-            <button onClick={toggleStatus}>{status ? 'Submit' : 'Edit'}</button>
+            <button onClick={changeEditable}>{editable ? 'Submit' : 'Edit'}</button>
         </div>
     );
 }
