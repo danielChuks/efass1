@@ -1,15 +1,17 @@
 import useToggle from '../../Hooks/useToggle';
+import AccordionHeader from './AccordionHeader';
+import AccordionContent from './AccordionContent';
 import './styles.css';
 
+
+
 export default function Acordion() {
-    const { status, toggleStatus } = useToggle();
+    const {status: expand, toggleStatus: toggleExpand} = useToggle();
 
     return (
         <div className="accordion">
-            <button onClick={toggleStatus}>
-                Click here <span>{status ? '-' : '+'}</span>
-            </button>
-            {status && <div className="content"> They dont like us </div>}
+            <AccordionHeader title={"Wlins product"} toggleExpand={toggleExpand} expand={expand} />
+            <AccordionContent content={"Blog post"} expand ={expand}/>      
         </div>
     );
 };

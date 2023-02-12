@@ -15,14 +15,14 @@ export default function UseFetch<T>(url: string): UseFetchProps<T[]> {
     /**
      * creating a limit to the data we are fetching from the api
      */
-    const urlWithLimit = `${url}?limit=5`;
+    //const urlWithLimit = `${url}?limit=5`;
 
     useEffect(() => {
         setTimeout(() => {
             const fetchData = async () => {
                 setLoading(true);
                 try {
-                    const response = await axios.get(urlWithLimit);
+                    const response = await axios.get(url);
                     setData(response.data);
                     setError(false);
                     setLoading(false);
@@ -41,7 +41,7 @@ export default function UseFetch<T>(url: string): UseFetchProps<T[]> {
 
             fetchData();
         }, 1000);
-    }, [urlWithLimit]);
+    }, [url]);
 
     return {
         data,
