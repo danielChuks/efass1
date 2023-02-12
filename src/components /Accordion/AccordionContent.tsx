@@ -1,5 +1,4 @@
 import React from 'react'
-import useToggle from '../../Hooks/useToggle'
 
 interface AccordionContentProps {
     content: string
