@@ -18,7 +18,9 @@ export default function AlbumList() {
         <div>
             {loading && <div> {' This app is loading....... '} </div>}
 
-            {error && <div>{'Oops there was an error at a time try again '}</div>}
+            {error && (
+                <div>{'Oops there was an error at a time try again '}</div>
+            )}
             {data.map((da: any, id: number) => (
                 <div key={id}>
                     <div>{da.title}</div>
