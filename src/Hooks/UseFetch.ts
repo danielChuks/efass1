@@ -12,7 +12,6 @@ export default function UseFetch<T>(url: string): UseFetchProps<T[]> {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
 
-
     /**
      * creating a limit to the data we are fetching from the api
      */
@@ -27,7 +26,7 @@ export default function UseFetch<T>(url: string): UseFetchProps<T[]> {
                     setData(response.data);
                     setError(false);
                     setLoading(false);
-    
+
                     if (!response) {
                         setLoading(false);
                         setError(true);
@@ -39,10 +38,9 @@ export default function UseFetch<T>(url: string): UseFetchProps<T[]> {
                     setLoading(false);
                 }
             };
-    
+
             fetchData();
-        }, 1000)
-       
+        }, 1000);
     }, [urlWithLimit]);
 
     return {

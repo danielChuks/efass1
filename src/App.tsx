@@ -3,7 +3,9 @@ import React from 'react';
 // import MovieList from './components /MovieList';
 // import Search from './components /Seacrch';
 import './App.css';
-import AlbumList from './components /album/AlbumList';
+// import AlbumList from './components /album/AlbumList';
+import Acordion from './components /Accordion/Acordion';
+import Editable from './components /Editable/Editable';
 
 
 
@@ -13,7 +15,9 @@ function App() {
       {/* <Form />
       <MovieList />
       <Search /> */}
-      <AlbumList />
+      {/* <AlbumList /> */}
+      <Acordion />
+      <Editable />
     </div>
   );
 }
