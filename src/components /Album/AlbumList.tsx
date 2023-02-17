@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react';
 import UseFetch from '../../Hooks/UseFetch';
 import { UseFetchProps } from '../../Hooks/UseFetch';
 
@@ -10,9 +11,13 @@ interface DataProps {
 }
 
 export default function AlbumList() {
-    const { data, loading, error }: UseFetchProps<DataProps[]> = UseFetch(
+    const { data, loading, error, fetchData }: UseFetchProps<DataProps[]> = UseFetch(
         'https://jsonplaceholder.typicode.com/posts'
     );
+
+    useEffect(() => {
+        fetchData();
+    }, [])
 
     return (
         <div>
