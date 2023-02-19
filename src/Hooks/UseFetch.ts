@@ -24,7 +24,7 @@ export default function UseFetch<T>(url: string): UseFetchProps<T[]> {
             if (!response) {
                 setLoading(false);
                 setError(true);
-                throw new Error('there was an error fetching');
+                throw new Error('There was an error fetching');
             }
         } catch (err) {
             setError(true);
