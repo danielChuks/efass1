@@ -9,9 +9,7 @@ export default function Acordion() {
     return (
         <div className="accordion">
             <AccordionHeader title={"Wlins product"} toggleExpand={toggleExpand} expand={expand} />
-            <AccordionContent content={"Blog post"} expand ={expand}/>   
-            <AccordionContent content={"Welcome"} expand ={expand}/>   
-            <AccordionContent content={"How are you doing"} expand ={expand}/>      
+            <AccordionContent content={"Blog post"} expand ={expand}/>        
         </div>
 
     );
