@@ -1,13 +1,12 @@
-('');
-import React from 'react';
-import InputGroup from '../../components/Input';
-import { SettingsButton } from '../../components/Button/index';
-import styles from './index.module.scss';
-import { useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Otp from './Otp';
-import NewPassword from './NewPassword';
-import { useNavigate } from 'react-router-dom';
+("");
+import React from "react";
+import InputGroup from "../../components/Input";
+import { SettingsButton } from "../../components/Button/index";
+import styles from "./index.module.scss";
+import { useState } from "react";
+import Otp from "./Otp";
+import NewPassword from "./NewPassword";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface ChangePasswordProps {
     value: number;
@@ -15,61 +14,61 @@ interface ChangePasswordProps {
 }
 function ChangePassword({ value, index }: ChangePasswordProps) {
     const navigate = useNavigate();
-    const searchParams = useSearchParams();
-    const tab = searchParams.get('tab');
-    const [data, setData] = useState({ email: '', password: '' });
+    const {tab} = useParams();
+    // const { tab } = searchParams();
+    const [data, setData] = useState({ email: "", password: "" });
     const [error, setError] = useState(false);
-    const [errorText, setErrorText] = useState('');
+    const [errorText, setErrorText] = useState("");
     const handleInputchange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setData({ ...data, [e.target.name]: e.target.value });
     };
     const navigateOtp = () => {
         setError(true);
-        setErrorText('Invalid email or password');
-        navigate('settings?tab=otp');
+        setErrorText("Invalid email or password");
+        navigate("settings?tab=otp");
     };
 
     return (
         <main
-            role="tabpanel"
+            role='tabpanel'
             hidden={value !== index}
             id={`change-password-tabpanel`}
             aria-labelledby={`change-password-tab`}
-            className={styles['change_password']}
+            className={styles["change_password"]}
         >
-            {value === index && tab === null ? (
+            {value === index && "tab" === null ? (
                 <>
-                    <p className={styles['title']}>
+                    <p className={styles["title"]}>
                         Verify it’s you by entering your email and current
                         password
                     </p>
-                    <div className={styles['content']}>
+                    <div className={styles["content"]}>
                         <InputGroup
-                            type="email"
-                            label="Email Address"
-                            placeholder="enter valid email"
+                            type='email'
+                            label='Email Address'
+                            placeholder='enter valid email'
                             value={data.email}
-                            name="email"
+                            name='email'
                             handleChange={handleInputchange}
                         />
                         <InputGroup
-                            type="password"
-                            label="Current Password"
+                            type='password'
+                            label='Current Password'
                             value={data.password}
-                            name="password"
-                            placeholder=""
+                            name='password'
+                            placeholder=''
                             handleChange={handleInputchange}
                         />
 
                         <SettingsButton
-                            text={'Continue'}
+                            text={"Continue"}
                             handleAction={navigateOtp}
                             error={error}
                             errorText={errorText}
                         />
                     </div>
                 </>
-            ) : value === index && tab === 'otp' ? (
+            ) : value === index && tab === "otp" ? (
                 <Otp />
             ) : (
                 <NewPassword />

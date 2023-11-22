@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar';
 import styles from './index.module.scss';
 // import MonthPicker from "../../components/MonthPicker";
-import Filter from '../../components/FilterBy';
 import { ReportData } from '../../interfaces';
 import { FaDownload } from 'react-icons/fa';
 import { useGenerateReportActions } from '../../actions/GenerateReport';
@@ -14,7 +13,7 @@ import {
     selectedGroupAtom,
 } from '../../state/generateReport';
 import { PaginatedTable } from '../../components/PaginatedTable';
-import { useRouter } from 'next/navigation';
+
 import { ReportPageProps } from '../../interfaces';
 import { options } from '../../components/FilterBy/dommy';
 import { LoadingScreen } from '../../components/LoadingScreen';

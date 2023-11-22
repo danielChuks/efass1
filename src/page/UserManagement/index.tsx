@@ -14,7 +14,6 @@ import { PaginatedTable } from '../../components/PaginatedTable';
 import { User } from '../../interfaces';
 import styles from './index.module.scss';
 import { options } from '../../components/FilterBy/dommy';
-import Image from 'next/image';
 import users from '../../assets/Images/users.png';
 import lastActivity from '../../assets/Images/calender.png';
 import userAdded from '../../assets/Images/person.png';

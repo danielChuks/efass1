@@ -3,12 +3,10 @@ import { Token } from '../../interfaces/token.interface';
 import { RequestMethod } from '../../enums/requestMethod.enum';
 // import { ConfigContext } from '../../providers/config/ConfigContext';
 import { RequestOptions } from '../../interfaces';
-import { useRouter } from 'next/navigation';
 import { useNavigate } from 'react-router-dom';
 
 export const useFetchWrapper = () => {
     const navigate = useNavigate();
-    const router = useRouter();
     const apiUrl = 'useContext(ConfigContext)';
 
     const generateAuthHeader = useCallback((auth: Token | null) => {
@@ -59,7 +57,7 @@ export const useFetchWrapper = () => {
 
             return fetch(`${apiUrl}/${url}`, requestOptions as RequestInit)
                 .then((response) => {
-                    return handleResponse(response, router);
+                    return handleResponse(response, navigate);
                 })
 
                 .catch((err) => {
