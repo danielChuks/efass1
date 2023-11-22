@@ -1,0 +1,26 @@
+.reportItemContainer {
+    input[type='radio']:checked {
+        accent-color: #000;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    /* ReportGroupSelector.module.scss */
+    .weekly,
+    .monthly,
+    .quarterly,
+    .yearly {
+        display: flex;
+        margin-right: 16px; /* Add margin to create space */
+        cursor: pointer;
+        gap: 10px;
+        font-size: 13px;
+    }
+
+    /* Add this class for label spacing */
+    .label-text {
+        margin-left: 8px; /* Adjust margin as needed */
+    }
+}
